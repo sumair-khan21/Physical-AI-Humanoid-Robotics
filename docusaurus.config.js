@@ -9,7 +9,7 @@ const config = {
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here
-  url: 'https://physical-ai-humanoid-robotics.vercel.app',
+  url: 'https://physical-ai-humanoid-robotics-blond-eta.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For Vercel deployment, use '/'
   baseUrl: '/',
@@ -48,7 +48,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/sumair-khan21/my-research-paper/tree/main/',
+            'https://github.com/sumair-khan21/Physical-AI-Humanoid-Robotics/tree/main/',
         },
         blog: false, // Disable blog for this textbook
         theme: {
@@ -90,7 +90,7 @@ const config = {
             label: 'Textbook',
           },
           {
-            href: 'https://github.com/sumair-khan21',
+            href: 'https://github.com/sumair-khan21/Physical-AI-Humanoid-Robotics',
             label: 'GitHub',
             position: 'right',
           },
@@ -138,7 +138,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/sumair-khan21',
+                href: 'https://github.com/sumair-khan21/Physical-AI-Humanoid-Robotics',
               },
             ],
           },

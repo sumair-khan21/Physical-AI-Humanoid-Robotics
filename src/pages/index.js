@@ -198,7 +198,7 @@ function HomepageHeader() {
                             </Link>
                             <Link
                                 className="button button--secondary button--lg"
-                                to="https://github.com/sumair-khan21">
+                                to="https://github.com/sumair-khan21/Physical-AI-Humanoid-Robotics">
                                 Explore Code 🧑‍💻
                             </Link>
                         </div>
