@@ -1,0 +1,159 @@
+---
+sidebar_position: 2
+title: Chapter 2 - ROS 2 Setup on Ubuntu 22.04
+description: Step-by-step guide to installing and configuring ROS 2 Humble on Ubuntu 22.04
+keywords: [ROS 2 installation, Ubuntu 22.04, workspace setup, colcon, rosdep]
+---
+
+# Chapter 2: ROS 2 Setup on Ubuntu 22.04
+
+:::info Template
+This is a template file. Fill in content from `specs/001-physical-ai-book-specs/spec.md` lines 265-354.
+Use Chapter 1 (`01-introduction.mdx`) as a formatting reference.
+:::
+
+## Chapter Purpose & Audience
+
+Guide readers through installing and configuring ROS 2 Humble or Iron on Ubuntu 22.04, setting up a development workspace, and verifying the installation with basic commands.
+
+**Target Audience**: Developers setting up their first ROS 2 environment.
+
+---
+
+## Learning Objectives
+
+1. Install ROS 2 Humble on Ubuntu 22.04 using official Debian packages
+2. Configure the ROS 2 environment variables and shell setup
+3. Create and build a ROS 2 workspace using colcon
+4. Verify installation by running demo nodes and viewing communication
+5. Troubleshoot common installation issues (missing dependencies, path errors)
+
+---
+
+## Prerequisites
+
+- Ubuntu 22.04 installed (physical machine, VM, or WSL2)
+- Completed Chapter 1 (understand ROS 2 concepts)
+- Sudo/admin access to install packages
+
+---
+
+## Key Concepts
+
+**TODO**: Add content from spec.md lines 279-286:
+- ROS 2 distributions: Humble (LTS), Iron (latest), and their support timelines
+- Installation methods: Debian packages (recommended) vs. building from source
+- Environment setup: sourcing setup.bash, ROS_DOMAIN_ID, ROS_LOCALHOST_ONLY
+- Workspaces: overlay vs. underlay, workspace structure (src/, build/, install/, log/)
+- colcon build tool for compiling ROS 2 packages
+- Dependency management: rosdep for installing system dependencies
+
+---
+
+## Installation Steps
+
+**TODO**: Add detailed installation process from spec.md lines 288-325
+
+### Step 1: System Update
+
+```bash
+# Update package index
+sudo apt update
+sudo apt upgrade -y
+```
+
+### Step 2: Add ROS 2 Repository
+
+**TODO**: Add repository setup commands
+
+### Step 3: Install ROS 2 Humble
+
+```bash
+# Install ROS 2 Humble (Desktop variant)
+sudo apt install ros-humble-desktop
+```
+
+### Step 4: Environment Setup
+
+```bash
+# Source ROS 2 setup file
+source /opt/ros/humble/setup.bash
+
+# Add to .bashrc for automatic sourcing
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+```
+
+---
+
+## Creating Your First Workspace
+
+**TODO**: Add workspace creation guide from spec.md
+
+```bash
+# Create workspace directory
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws
+
+# Build workspace
+colcon build
+
+# Source the workspace
+source ~/ros2_ws/install/setup.bash
+```
+
+---
+
+## Diagrams / Architecture Notes
+
+**TODO**: Add Mermaid.js diagrams from spec.md lines 327-331:
+- Workspace Structure Diagram
+- Environment Layering Diagram
+- Installation Verification Flowchart
+
+---
+
+## Verification
+
+**TODO**: Add verification steps from spec.md
+
+### Running Demo Nodes
+
+```bash
+# Terminal 1: Run talker
+ros2 run demo_nodes_cpp talker
+
+# Terminal 2: Run listener
+ros2 run demo_nodes_cpp listener
+```
+
+---
+
+## Troubleshooting
+
+**TODO**: Add common issues and solutions from spec.md lines 293-294
+
+---
+
+## Practice Tasks
+
+**TODO**: Add practice tasks from spec.md lines 333-338:
+- Task 1: Install ROS 2 Humble
+- Task 2: Create and build workspace
+- Task 3: Run demo nodes
+- Task 4: Configure automatic environment setup
+
+---
+
+## Summary
+
+**TODO**: Add summary points from spec.md lines 340-348
+
+---
+
+## References
+
+**TODO**: Add references from spec.md lines 350-354
+
+---
+
+**Next**: [Chapter 3: Communication Basics](/docs/module-01-ros2/03-communication) →

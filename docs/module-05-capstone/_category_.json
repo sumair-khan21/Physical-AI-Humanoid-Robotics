@@ -1,0 +1,9 @@
+{
+  "label": "Capstone: System Integration",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "description": "Bring it all together in a comprehensive project. Learn system architecture design for humanoid robotics, sim-to-real transfer strategies, and complete demo implementation blueprints."
+  },
+  "collapsed": false
+}
