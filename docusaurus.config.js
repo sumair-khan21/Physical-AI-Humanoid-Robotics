@@ -9,10 +9,10 @@ const config = {
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here
-  url: 'https://sumair-khan21.github.io',
+  url: 'https://physical-ai-humanoid-robotics.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/my-research-paper/',
+  // For Vercel deployment, use '/'
+  baseUrl: '/',
 
   // Add the progress bar and scroll-to-top client modules
   clientModules: [
