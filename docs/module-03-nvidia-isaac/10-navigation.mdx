@@ -1,0 +1,187 @@
+---
+sidebar_position: 3
+title: Chapter 10 - Navigation and Path Planning
+description: Autonomous navigation with ROS 2 Nav2 stack in Isaac Sim for humanoid robots
+keywords: [Nav2, navigation, path planning, costmap, A*, RRT, obstacle avoidance, autonomous navigation]
+---
+
+# Chapter 10: Navigation and Path Planning in Isaac Sim
+
+:::info Template
+Fill in content from `specs/001-physical-ai-book-specs/spec.md` lines 934-1011.
+Use Chapter 5 (`05-simulation-foundations.mdx`) as formatting reference.
+:::
+
+## Overview
+
+**TODO**: Add overview paragraph introducing navigation and path planning (spec.md lines 936-938)
+
+**Target Audience**: Developers implementing autonomous navigation for humanoid robots.
+
+---
+
+## Learning Objectives
+
+By the end of this chapter, you will be able to:
+
+1. **TODO**: Add learning objective 1 from spec.md line 942
+2. **TODO**: Add learning objective 2 from spec.md line 943
+3. **TODO**: Add learning objective 3 from spec.md line 944
+4. **TODO**: Add learning objective 4 from spec.md line 945
+5. **TODO**: Add learning objective 5 from spec.md line 946
+
+---
+
+## Navigation Concepts
+
+**TODO**: Explain navigation fundamentals (spec.md line 942)
+- Costmaps
+- Global planning
+- Local planning
+- Obstacle avoidance
+
+---
+
+## ROS 2 Nav2 Stack Overview
+
+**TODO**: Explain Nav2 components (spec.md lines 950, 954)
+- Global planner
+- Local planner
+- Costmap
+- Recovery behaviors
+- Behavior trees
+- Lifecycle nodes
+
+**Mermaid Diagram TODO**: Create Nav2 Architecture diagram (spec.md line 985)
+```
+TODO: Sensor Data → Costmap → Global Planner → Local Planner → Velocity Commands → Robot
+```
+
+---
+
+## Costmaps: Static and Dynamic
+
+**TODO**: Explain costmap layers (spec.md line 951)
+- Static costmap (from map)
+- Dynamic costmap (from sensors)
+- Inflation layers
+
+**Mermaid Diagram TODO**: Create Costmap Layers diagram (spec.md line 986)
+```
+TODO: Static Map + Obstacle Layer + Inflation Layer = Final Costmap
+```
+
+---
+
+## Global Path Planning Algorithms
+
+**TODO**: Explain global planning (spec.md lines 944, 952)
+- A* algorithm
+- Dijkstra
+- RRT (Rapidly-exploring Random Tree)
+
+**Mermaid Diagram TODO**: Create Path Planning Visualization (spec.md line 987)
+```
+TODO: Show A* or Dijkstra path on grid map with obstacles
+```
+
+---
+
+## Local Planning and Obstacle Avoidance
+
+**TODO**: Explain local planning (spec.md line 953)
+- DWA (Dynamic Window Approach)
+- TEB (Timed Elastic Band)
+- Real-time trajectory generation
+
+---
+
+## Configuring Nav2 for Humanoid Robots
+
+**TODO**: Add Nav2 configuration section (spec.md lines 943, 959)
+
+**TODO**: Add installation and launch commands (spec.md lines 964-981)
+
+```bash
+# TODO: Add commands from spec.md lines 967-980
+# - Install Nav2
+# - Launch Nav2 with custom parameters
+# - Send navigation goal
+# - Visualize costmaps in RViz
+# - Check Nav2 status
+```
+
+---
+
+## Integrating Isaac Sim Sensors with Nav2
+
+**TODO**: Add section on sensor integration (spec.md lines 945, 955)
+
+**Mermaid Diagram TODO**: Create Isaac Sim + Nav2 Integration diagram (spec.md line 988)
+```
+TODO: Isaac Sim Sensors → ROS 2 Topics → Nav2 Stack → Velocity Commands → Isaac Sim Robot
+```
+
+---
+
+## Testing Navigation with Dynamic Obstacles
+
+**TODO**: Add section on dynamic obstacle testing (spec.md lines 946, 961)
+
+**Example TODO**: Add dynamic obstacle avoidance example (spec.md line 961)
+
+---
+
+## Behavior Trees in Nav2
+
+**TODO**: Explain behavior trees (spec.md line 954)
+- Waypoint following
+- Recovery behaviors
+
+---
+
+## Practice Tasks
+
+Complete these exercises to master navigation in Isaac Sim:
+
+### **Task 1: Install Nav2**
+**TODO**: Add task details from spec.md line 992
+
+---
+
+### **Task 2: Configure Nav2 for Humanoid**
+**TODO**: Add task details from spec.md line 993
+
+---
+
+### **Task 3: Send Navigation Goal**
+**TODO**: Add task details from spec.md line 994
+
+---
+
+### **Task 4: Test Obstacle Avoidance**
+**TODO**: Add task details from spec.md line 995
+
+---
+
+## Summary
+
+**TODO**: Add summary points from spec.md lines 999-1004:
+- Navigation requirements (sensors, costmaps, planners)
+- Nav2 complete navigation stack
+- Global vs. local planning
+- Costmap composition
+- Isaac Sim physics-based testing
+- Behavior trees for complex navigation
+
+---
+
+## References
+
+- Navigation2. (2024). *Nav2 Documentation*. Retrieved from https://navigation.ros.org/
+- Navigation2. (2024). *Nav2 Tutorials*. Retrieved from https://navigation.ros.org/tutorials/index.html
+- NVIDIA. (2024). *Isaac Sim Navigation*. Retrieved from https://docs.omniverse.nvidia.com/isaacsim/latest/ros2_tutorials.html
+
+---
+
+**Next Chapter**: Module 4 (Vision-Language-Action) - Coming soon! Continue implementing this template or proceed to the next module.

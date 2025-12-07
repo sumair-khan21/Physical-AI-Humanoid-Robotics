@@ -1,0 +1,167 @@
+---
+sidebar_position: 2
+title: Chapter 12 - LLM-Based Planning for Humanoid Robots
+description: Using large language models for high-level task planning, reasoning, and decision-making in robotics
+keywords: [LLM, GPT-4, Claude, task planning, reasoning, code generation, prompt engineering, OpenAI API]
+---
+
+# Chapter 12: LLM-Based Planning for Humanoid Robots
+
+:::info Template
+Fill in content from `specs/001-physical-ai-book-specs/spec.md` lines 1095-1168.
+Use Chapter 11 (`11-voice-to-action.mdx`) as formatting reference.
+:::
+
+## Overview
+
+**TODO**: Add overview paragraph introducing LLMs for task planning (spec.md lines 1097-1099)
+
+**Target Audience**: Developers integrating AI planning with robotic systems.
+
+---
+
+## Learning Objectives
+
+By the end of this chapter, you will be able to:
+
+1. **TODO**: Add learning objective 1 from spec.md line 1103
+2. **TODO**: Add learning objective 2 from spec.md line 1104
+3. **TODO**: Add learning objective 3 from spec.md line 1105
+4. **TODO**: Add learning objective 4 from spec.md line 1106
+5. **TODO**: Add learning objective 5 from spec.md line 1107
+
+---
+
+## LLM-Based Planning Overview
+
+**TODO**: Explain LLM role in robotics (spec.md line 1111)
+- Task decomposition
+- Reasoning
+- Code generation
+
+**Mermaid Diagram TODO**: Create LLM Planning Pipeline diagram (spec.md line 1143)
+```
+TODO: Natural Language Goal → LLM API → Action Sequence → ROS 2 Action Servers → Robot
+```
+
+---
+
+## Prompting Strategies for Robot Planning
+
+**TODO**: Explain prompting techniques (spec.md line 1112)
+- Few-shot examples
+- Chain-of-thought
+- Structured outputs
+
+**Mermaid Diagram TODO**: Create Prompt Structure diagram (spec.md line 1146)
+```
+TODO: System prompt + Few-shot examples + User task → LLM output (JSON action sequence)
+```
+
+---
+
+## Integrating LLM APIs with ROS 2
+
+**TODO**: Add LLM-ROS 2 integration section (spec.md line 1113)
+
+**TODO**: Add installation and API setup commands (spec.md lines 1125-1139)
+
+```bash
+# TODO: Add commands from spec.md lines 1128-1138
+# - Install OpenAI client
+# - Call LLM for task planning
+# - Execute generated action sequence
+# - Monitor execution status
+```
+
+---
+
+## Task Decomposition with LLMs
+
+**TODO**: Explain task decomposition (spec.md line 1114)
+
+**Mermaid Diagram TODO**: Create Task Decomposition diagram (spec.md line 1144)
+```
+TODO: High-level task → Sub-tasks → Primitive actions (navigate, pick, place)
+```
+
+**Example TODO**: Add "Set the table for dinner" example (spec.md line 1120)
+
+---
+
+## Parsing and Executing LLM Outputs
+
+**TODO**: Add section on parsing LLM outputs (spec.md line 1106)
+- JSON action sequences
+- Validation
+- Execution via ROS 2
+
+**Example TODO**: Add structured output example (spec.md line 1121)
+
+---
+
+## Error Recovery and Re-Planning
+
+**TODO**: Explain error recovery with LLMs (spec.md line 1115)
+
+**Mermaid Diagram TODO**: Create Error Recovery Flow (spec.md line 1145)
+```
+TODO: Action fails → LLM re-plans → Execute new plan
+```
+
+**Example TODO**: Add re-planning example (spec.md line 1122)
+
+---
+
+## LLM Code Generation for Robot Tasks
+
+**TODO**: Add section on code generation (spec.md line 1123)
+- Generate Python code for ROS 2 APIs
+- Orchestrate multi-step tasks
+
+---
+
+## Practice Tasks
+
+Complete these exercises to master LLM-based planning:
+
+### **Task 1: Setup LLM API**
+**TODO**: Add task details from spec.md line 1150
+
+---
+
+### **Task 2: Create Planning Node**
+**TODO**: Add task details from spec.md line 1151
+
+---
+
+### **Task 3: Parse and Execute Actions**
+**TODO**: Add task details from spec.md line 1152
+
+---
+
+### **Task 4: Implement Error Recovery**
+**TODO**: Add task details from spec.md line 1153
+
+---
+
+## Summary
+
+**TODO**: Add summary points from spec.md lines 1157-1162:
+- LLMs for task planning and reasoning
+- Task decomposition
+- Prompting strategies
+- Parsing and execution
+- Error recovery
+- Use cases
+
+---
+
+## References
+
+- OpenAI. (2024). *OpenAI API Documentation*. Retrieved from https://platform.openai.com/docs
+- Open Robotics. (2024). *ROS 2 Python Client Library*. Retrieved from https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html
+
+---
+
+**Next Chapter**: [Chapter 13: Multimodal Robotics](13-multimodal.mdx) - Integrate vision, language, and action into unified VLA systems.
