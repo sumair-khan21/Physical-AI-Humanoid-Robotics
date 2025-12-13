@@ -38,6 +38,11 @@ const config = {
     locales: ['en'],
   },
 
+  customFields: {
+    // Backend URL for ChatWidget (environment-specific)
+    backendURL: process.env.BACKEND_URL || 'http://localhost:8000',
+  },
+
   presets: [
     [
       'classic',
