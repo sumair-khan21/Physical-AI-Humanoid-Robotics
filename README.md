@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🤖 Physical AI & Humanoid Robotics
 
 <div align="center">
@@ -152,3 +153,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Made with ❤️ for the Robotics Community
 
 </div>
+=======
+---
+title: Rag Chatbot Backend
+emoji: 🦀
+colorFrom: indigo
+colorTo: green
+sdk: docker
+pinned: false
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+>>>>>>> d6b4cdef45722c58068140fc7b9d0637db5619b5
