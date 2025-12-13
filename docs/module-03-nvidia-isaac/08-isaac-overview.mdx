@@ -1,0 +1,164 @@
+---
+sidebar_position: 1
+title: Chapter 8 - NVIDIA Isaac Sim Overview
+description: Introduction to GPU-accelerated robotics simulation with NVIDIA Isaac Sim and Omniverse
+keywords: [Isaac Sim, NVIDIA Omniverse, PhysX, RTX, synthetic data, GPU acceleration]
+---
+
+# Chapter 8: NVIDIA Isaac Sim Overview
+
+:::info Template
+Fill in content from `specs/001-physical-ai-book-specs/spec.md` lines 775-850.
+Use Chapter 5 (`05-simulation-foundations.mdx`) as formatting reference.
+:::
+
+## Overview
+
+**TODO**: Add overview paragraph introducing Isaac Sim as GPU-accelerated simulator (spec.md lines 777-779)
+
+**Target Audience**: Developers exploring GPU-accelerated simulation and perception.
+
+---
+
+## Learning Objectives
+
+By the end of this chapter, you will be able to:
+
+1. **TODO**: Add learning objective 1 from spec.md line 783
+2. **TODO**: Add learning objective 2 from spec.md line 784
+3. **TODO**: Add learning objective 3 from spec.md line 785
+4. **TODO**: Add learning objective 4 from spec.md line 786
+5. **TODO**: Add learning objective 5 from spec.md line 787
+
+---
+
+## Isaac Sim Architecture
+
+**TODO**: Explain Isaac Sim architecture (spec.md line 791)
+- Built on NVIDIA Omniverse platform
+- PhysX 5 physics engine
+- RTX ray tracing
+
+**Mermaid Diagram TODO**: Create Isaac Sim Architecture diagram (spec.md line 824)
+```
+TODO: Omniverse Kit → PhysX 5 → RTX Renderer → ROS 2 Bridge → External Nodes
+```
+
+---
+
+## GPU Acceleration Benefits
+
+**TODO**: Explain GPU acceleration advantages (spec.md line 792)
+- Parallel physics simulation
+- Real-time rendering
+- AI inference
+
+**Example TODO**: Add example of 100+ FPS physics simulation (spec.md line 802)
+
+---
+
+## Synthetic Data Generation
+
+**TODO**: Add section on synthetic data (spec.md lines 793, 801)
+- Automated labeling for ML training
+- Bounding boxes
+- Segmentation masks
+
+**Mermaid Diagram TODO**: Create Synthetic Data Pipeline diagram (spec.md line 825)
+```
+TODO: Virtual Camera → RTX Rendering → Semantic Labels → Training Dataset
+```
+
+---
+
+## Domain Randomization
+
+**TODO**: Explain domain randomization (spec.md line 794)
+- Varying lighting, textures, object poses
+- Improving sim-to-real transfer
+
+---
+
+## System Requirements and Installation
+
+**TODO**: Add system requirements section (spec.md line 796)
+- NVIDIA RTX GPU requirement
+- Ubuntu 20.04/22.04
+- CUDA and drivers
+
+**TODO**: Add installation instructions (spec.md lines 805-820)
+
+```bash
+# TODO: Add commands from spec.md lines 808-820
+# - Check NVIDIA driver and CUDA
+# - Download Isaac Sim
+# - Launch Isaac Sim
+# - Verify ROS 2 bridge
+```
+
+---
+
+## ROS 2 Integration
+
+**TODO**: Explain Isaac Sim ROS 2 bridge (spec.md line 795)
+
+---
+
+## Isaac Sim vs. Gazebo Comparison
+
+**TODO**: Add comparison section (spec.md line 787)
+
+**Comparison Table TODO**: Create Isaac Sim vs. Gazebo table (spec.md line 827)
+- Physics engine
+- Rendering
+- GPU acceleration
+- ROS 2 integration
+- Synthetic data capabilities
+
+---
+
+## Practice Tasks
+
+Complete these exercises to get started with Isaac Sim:
+
+### **Task 1: Verify GPU and Drivers**
+**TODO**: Add task details from spec.md line 831
+
+---
+
+### **Task 2: Install Isaac Sim**
+**TODO**: Add task details from spec.md line 832
+
+---
+
+### **Task 3: Load Example Robot Scene**
+**TODO**: Add task details from spec.md line 833
+
+---
+
+### **Task 4: Explore Isaac Sim Interface**
+**TODO**: Add task details from spec.md line 834
+
+---
+
+## Summary
+
+**TODO**: Add summary points from spec.md lines 838-843:
+- Isaac Sim as GPU-accelerated simulator
+- PhysX 5 and RTX features
+- RTX GPU requirement
+- ROS 2 integration
+- High-fidelity rendering
+- Synthetic data for AI training
+
+---
+
+## References
+
+- NVIDIA. (2024). *Isaac Sim Documentation*. Retrieved from https://docs.omniverse.nvidia.com/isaacsim/latest/index.html
+- NVIDIA. (2024). *Isaac Sim Installation Guide*. Retrieved from https://docs.omniverse.nvidia.com/isaacsim/latest/installation.html
+- NVIDIA. (2024). *Isaac Sim ROS 2 Integration*. Retrieved from https://docs.omniverse.nvidia.com/isaacsim/latest/ros2_tutorials.html
+
+---
+
+**Next Chapter**: [Chapter 9: Perception with VSLAM and Sensors](09-perception.mdx) - Learn visual SLAM and sensor simulation in Isaac Sim.

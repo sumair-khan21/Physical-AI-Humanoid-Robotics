@@ -1,0 +1,9 @@
+{
+  "label": "Module 2: Digital Twin",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Explore simulation technologies for safe, cost-effective robot development. Learn simulation fundamentals, digital twins, Gazebo for physics-based simulation, and Unity for high-fidelity visualization."
+  },
+  "collapsed": false
+}

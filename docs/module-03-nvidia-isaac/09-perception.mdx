@@ -1,0 +1,166 @@
+---
+sidebar_position: 2
+title: Chapter 9 - Perception with VSLAM and Sensors
+description: Visual SLAM concepts and sensor simulation in Isaac Sim for humanoid robot perception
+keywords: [VSLAM, visual SLAM, Isaac Sim sensors, camera, LiDAR, point cloud, rtabmap, perception]
+---
+
+# Chapter 9: Perception with VSLAM and Sensors in Isaac Sim
+
+:::info Template
+Fill in content from `specs/001-physical-ai-book-specs/spec.md` lines 853-931.
+Use Chapter 5 (`05-simulation-foundations.mdx`) as formatting reference.
+:::
+
+## Overview
+
+**TODO**: Add overview paragraph introducing VSLAM and sensor simulation (spec.md lines 855-857)
+
+**Target Audience**: Developers building perception systems for navigation and mapping.
+
+---
+
+## Learning Objectives
+
+By the end of this chapter, you will be able to:
+
+1. **TODO**: Add learning objective 1 from spec.md line 861
+2. **TODO**: Add learning objective 2 from spec.md line 862
+3. **TODO**: Add learning objective 3 from spec.md line 863
+4. **TODO**: Add learning objective 4 from spec.md line 864
+5. **TODO**: Add learning objective 5 from spec.md line 865
+
+---
+
+## VSLAM Fundamentals
+
+**TODO**: Explain VSLAM concepts (spec.md lines 861, 869)
+- Feature extraction
+- Mapping
+- Localization
+
+**Mermaid Diagram TODO**: Create VSLAM Pipeline diagram (spec.md line 905)
+```
+TODO: Camera → Feature Extraction → Visual Odometry → Mapping → Localization
+```
+
+---
+
+## Camera Sensors in Isaac Sim
+
+**TODO**: Add section on camera sensor types (spec.md line 870)
+- RGB cameras
+- Depth cameras
+- Segmentation
+- Bounding boxes
+
+**Example TODO**: Add RGB-D camera configuration example (spec.md line 878)
+
+---
+
+## LiDAR Sensors
+
+**TODO**: Explain LiDAR simulation (spec.md line 871)
+- Point cloud generation
+- Raycasting
+- Noise models
+
+**Example TODO**: Add LiDAR simulation example (spec.md line 880)
+
+**Mermaid Diagram TODO**: Create Point Cloud Processing Flow (spec.md line 907)
+```
+TODO: LiDAR → Point Cloud → Voxel Grid Filter → Obstacle Detection
+```
+
+---
+
+## ROS 2 Perception Pipeline
+
+**TODO**: Explain perception pipeline integration (spec.md line 872)
+
+**TODO**: Add installation commands (spec.md lines 883-901)
+
+```bash
+# TODO: Add commands from spec.md lines 886-900
+# - Install rtabmap-ros
+# - Install pointcloud-to-laserscan
+# - Launch rtabmap
+# - Visualize in RViz
+# - Echo camera topic
+# - Echo LiDAR topic
+```
+
+---
+
+## Integrating with rtabmap SLAM
+
+**TODO**: Add section on rtabmap integration (spec.md lines 863, 879)
+
+**Example TODO**: Add rtabmap launch file example
+
+---
+
+## Sensor Noise and Domain Randomization
+
+**TODO**: Explain domain randomization for perception (spec.md lines 873, 865)
+
+**Mermaid Diagram TODO**: Create Domain Randomization diagram (spec.md line 908)
+```
+TODO: Show variations in lighting, textures, object poses
+```
+
+---
+
+## Isaac Sim Replicator
+
+**TODO**: Add section on synthetic data generation (spec.md line 874)
+- Automated labeling
+- ML training data
+
+---
+
+## Practice Tasks
+
+Complete these exercises to master perception in Isaac Sim:
+
+### **Task 1: Add RGB-D Camera**
+**TODO**: Add task details from spec.md line 912
+
+---
+
+### **Task 2: Run rtabmap SLAM**
+**TODO**: Add task details from spec.md line 913
+
+---
+
+### **Task 3: Simulate LiDAR Sensor**
+**TODO**: Add task details from spec.md line 914
+
+---
+
+### **Task 4: Enable Domain Randomization**
+**TODO**: Add task details from spec.md line 915
+
+---
+
+## Summary
+
+**TODO**: Add summary points from spec.md lines 919-924:
+- VSLAM for localization and mapping
+- Isaac Sim camera types
+- LiDAR point clouds
+- ROS 2 perception package integration
+- Domain randomization benefits
+- Replicator for synthetic data
+
+---
+
+## References
+
+- NVIDIA. (2024). *Isaac Sim Sensors*. Retrieved from https://docs.omniverse.nvidia.com/isaacsim/latest/features/sensors_simulation.html
+- Open Robotics. (2024). *ROS 2 Camera Tutorials*. Retrieved from https://docs.ros.org/en/humble/Tutorials/Advanced/Simulators/Gazebo/Gazebo.html#camera-sensor
+- rtabmap. (2024). *rtabmap_ros Documentation*. Retrieved from http://wiki.ros.org/rtabmap_ros
+
+---
+
+**Next Chapter**: [Chapter 10: Navigation and Path Planning](10-navigation.mdx) - Implement autonomous navigation with ROS 2 Nav2 stack in Isaac Sim.

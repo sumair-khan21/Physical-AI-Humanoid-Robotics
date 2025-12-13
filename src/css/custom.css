@@ -1,0 +1,493 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* =========================================
+   1. GLOBAL VARIABLES & THEME SETUP
+   ========================================= */
+:root {
+  /* Brand Colors - Electric Indigo & Violet */
+  --ifm-color-primary: #6366f1;
+  /* Indigo 500 */
+  --ifm-color-primary-dark: #4f46e5;
+  --ifm-color-primary-darker: #4338ca;
+  --ifm-color-primary-darkest: #3730a3;
+  --ifm-color-primary-light: #818cf8;
+  --ifm-color-primary-lighter: #a5b4fc;
+  --ifm-color-primary-lightest: #c7d2fe;
+
+  /* Typography */
+  --ifm-font-family-base: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ifm-heading-font-family: 'Plus Jakarta Sans', var(--ifm-font-family-base);
+  --ifm-code-font-family: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --ifm-heading-font-weight: 700;
+  --ifm-font-size-base: 17px;
+  --ifm-line-height-base: 1.6;
+
+  /* Spacing & Layout */
+  --ifm-global-radius: 12px;
+  --ifm-card-border-radius: 16px;
+
+  /* Light Mode (Clean & Airy) */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f8fafc;
+  --ifm-text-color: #1e293b;
+  --ifm-navbar-background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* =========================================
+   2. DARK MODE (DEEP SPACE THEME)
+   ========================================= */
+[data-theme='dark'] {
+  --ifm-color-primary: #818cf8;
+  --ifm-color-primary-dark: #6366f1;
+  --ifm-color-primary-darker: #4f46e5;
+  --ifm-color-primary-darkest: #4338ca;
+  --ifm-color-primary-light: #a5b4fc;
+  --ifm-color-primary-lighter: #c7d2fe;
+  --ifm-color-primary-lightest: #e0e7ff;
+
+  /* Backgrounds */
+  --ifm-background-color: #0B0E14;
+  /* Void Black/Blue */
+  --ifm-background-surface-color: #11141b;
+  /* Slightly lighter for cards/sidebars */
+  --ifm-navbar-background-color: rgba(11, 14, 20, 0.75);
+  --ifm-footer-background-color: #050608;
+
+  /* Text */
+  --ifm-text-color: #e2e8f0;
+  --ifm-heading-color: #f1f5f9;
+  --ifm-menu-color: #94a3b8;
+  --ifm-toc-link-color: #64748b;
+
+  /* Borders */
+  --ifm-border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================
+   3. NAVIGATION BAR
+   ========================================= */
+/* =========================================
+   3. NAVIGATION BAR
+   ========================================= */
+.navbar {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background-color: rgba(11, 14, 20, 0.6) !important;
+  /* increased transparency for glass effect */
+  border-bottom: 1px solid transparent;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  height: 4.5rem;
+
+  /* Gradient Border Bottom Trick */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      var(--ifm-color-primary-light) 50%,
+      transparent 100%);
+  opacity: 0.5;
+}
+
+.navbar__brand {
+  margin-right: 2rem;
+}
+
+.navbar__title {
+  font-weight: 800;
+  font-family: var(--ifm-heading-font-family);
+  letter-spacing: -0.02em;
+  font-size: 1.3rem;
+  background: linear-gradient(135deg, #fff 20%, var(--ifm-color-primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.navbar__item {
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  margin: 0 4px;
+}
+
+/* Navbar Link Hover Animation */
+.navbar__item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__link--active {
+  background: rgba(99, 102, 241, 0.1) !important;
+  color: var(--ifm-color-primary-light) !important;
+  box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.2);
+}
+
+/* =========================================
+   4. SIDEBAR & DOCS UI
+   ========================================= */
+/* Sidebar Container */
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-border-color) !important;
+  background-color: var(--ifm-background-color) !important;
+}
+
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background-color: #0B0E14 !important;
+  /* Ensure match with main bg */
+}
+
+/* Sidebar Menu Items */
+.menu__link {
+  border-radius: 8px;
+  margin: 2px 0;
+  transition: all 0.2s ease;
+}
+
+.menu__link--active {
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.15), transparent);
+  border-left: 3px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary-light) !important;
+}
+
+/* Breadcrumbs */
+.breadcrumbs__item {
+  background: var(--ifm-background-surface-color);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  border: 1px solid var(--ifm-border-color);
+}
+
+/* =========================================
+   5. MARKDOWN CONTENT STYLING
+   ========================================= */
+/* Headings */
+.markdown h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #fff, var(--ifm-color-primary-lightest));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Cards (for Index pages etc) */
+.card {
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-border-color);
+  box-shadow: none;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--ifm-color-primary-dark);
+}
+
+/* Admonitions (Note, Tips, Warnings) */
+.alert {
+  border: 1px solid;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(5px);
+}
+
+.alert--info {
+  border-color: rgba(99, 102, 241, 0.3);
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+}
+
+.alert--warning {
+  border-color: rgba(234, 179, 8, 0.3);
+  background: linear-gradient(90deg, rgba(234, 179, 8, 0.1), transparent);
+}
+
+/* Code Blocks */
+[class^='codeBlockContainer'] {
+  box-shadow: none !important;
+  border: 1px solid var(--ifm-border-color);
+  background-color: #0f1117 !important;
+  border-radius: 12px;
+}
+
+/* Tables */
+table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--ifm-border-color);
+}
+
+th {
+  background-color: var(--ifm-background-surface-color);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--ifm-color-content-secondary);
+}
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+.footer {
+  background-color: #050608;
+  border-top: 1px solid transparent;
+  position: relative;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin-top: 0;
+  /* Removed gap so sidebar touches footer */
+}
+
+/* Gradient Top Border */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(99, 102, 241, 0.4) 50%,
+      transparent 100%);
+  box-shadow: 0 1px 10px rgba(99, 102, 241, 0.3);
+}
+
+.footer__title {
+  color: var(--ifm-color-primary-light);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  margin-bottom: 1.2rem;
+  opacity: 1;
+}
+
+.footer__link-item {
+  font-size: 0.95rem;
+  color: var(--ifm-color-content-secondary);
+  transition: all 0.2s ease;
+  padding-left: 0;
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-color-primary-light);
+  transform: translateX(3px);
+  text-decoration: none;
+}
+
+.footer__copyright {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: var(--ifm-color-content-secondary);
+  opacity: 0.7;
+}
+
+/* =========================================
+   7. SIDEBAR STYLING
+   ========================================= */
+.theme-doc-sidebar-menu {
+  padding: 1rem 0.5rem;
+}
+
+.theme-doc-sidebar-item-link-level-1 {
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-content-secondary);
+  padding-left: 1rem !important;
+}
+
+.menu__link {
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-weight: 500;
+  color: var(--ifm-color-content);
+  position: relative;
+  overflow: hidden;
+}
+
+.menu__link:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: #fff;
+  transform: translateX(2px);
+}
+
+.menu__link--active {
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.1) 0%, transparent 100%) !important;
+  color: var(--ifm-color-primary-light) !important;
+  font-weight: 600;
+}
+
+/* Active Indicator Line */
+.menu__link--active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 3px;
+  background: var(--ifm-color-primary);
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 0 10px var(--ifm-color-primary);
+}
+
+.menu__list-item-collapsible:hover {
+  background: transparent !important;
+}
+
+.menu__list-item {
+  margin-bottom: 2px;
+}
+
+/* Sidebar Toggle Button */
+.theme-doc-sidebar-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-top: 1rem;
+  transition: all 0.2s;
+}
+
+.theme-doc-sidebar-toggle:hover {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+}
+
+/* Doc Page Layout Adjustments */
+.docPage_src-theme-DocPage-Layout-styles-module {
+  background: var(--ifm-background-color);
+}
+
+/* Ensure sidebar has a border that connects to footer */
+aside[class^='theme-doc-sidebar-container'] {
+  border-right: 1px solid var(--ifm-border-color) !important;
+}
+
+/* =========================================
+   8. READING PROGRESS BAR
+   ========================================= */
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ifm-color-primary) 0%, #fff 100%);
+  z-index: 99999;
+  /* Above everything including navbar */
+  width: 0%;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* =========================================
+   7. BUTTONS & CTA
+   ========================================= */
+.button--primary {
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.button--primary:hover {
+  background: linear-gradient(135deg, var(--ifm-color-primary-light), var(--ifm-color-primary));
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.pagination-nav__link {
+  border: 1px solid var(--ifm-border-color);
+  background: var(--ifm-background-surface-color);
+  transition: all 0.2s;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   9. SCROLL TO TOP BUTTON
+   ========================================= */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: rgba(11, 14, 20, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--ifm-color-primary-light);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Light Mode Override */
+html[data-theme='light'] .scroll-to-top-btn {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--ifm-color-primary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top-btn:hover {
+  background: var(--ifm-color-primary);
+  color: #fff;
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+}
+
+.scroll-to-top-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2.5px;
+}

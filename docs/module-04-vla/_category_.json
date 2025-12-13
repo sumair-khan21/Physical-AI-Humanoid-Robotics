@@ -1,0 +1,9 @@
+{
+  "label": "Module 4: Vision-Language-Action",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Integrate AI and natural language understanding with robotics. Learn voice-to-action systems, LLM-based task planning, and multimodal robotics combining vision, language, and action."
+  },
+  "collapsed": false
+}

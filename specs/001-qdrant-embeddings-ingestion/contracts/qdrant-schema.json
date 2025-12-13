@@ -1,0 +1,183 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Qdrant Collection Schema for RAG Embedding",
+  "description": "Schema for the rag_embedding collection storing document chunks with embeddings",
+  "collection_config": {
+    "collection_name": "rag_embedding",
+    "vector_config": {
+      "size": 1024,
+      "distance": "Cosine",
+      "on_disk": false
+    },
+    "optimizers_config": {
+      "default_segment_number": 2,
+      "indexing_threshold": 10000
+    },
+    "hnsw_config": {
+      "m": 16,
+      "ef_construct": 100,
+      "full_scan_threshold": 10000
+    }
+  },
+  "payload_schema": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "type": "string",
+        "description": "The actual text content of the chunk",
+        "indexed": false,
+        "minLength": 100,
+        "maxLength": 5000
+      },
+      "url": {
+        "type": "string",
+        "description": "Source URL of the page this chunk came from",
+        "indexed": true,
+        "index_type": "keyword",
+        "format": "uri"
+      },
+      "chunk_index": {
+        "type": "integer",
+        "description": "Position of this chunk within the source page (0-indexed)",
+        "indexed": true,
+        "index_type": "integer",
+        "minimum": 0
+      },
+      "page_title": {
+        "type": "string",
+        "description": "Title of the source page",
+        "indexed": true,
+        "index_type": "text",
+        "maxLength": 500
+      },
+      "token_count": {
+        "type": "integer",
+        "description": "Number of tokens in this chunk",
+        "indexed": true,
+        "index_type": "integer",
+        "minimum": 300,
+        "maximum": 500
+      },
+      "created_at": {
+        "type": "string",
+        "description": "ISO 8601 timestamp when this chunk was ingested",
+        "indexed": true,
+        "index_type": "datetime",
+        "format": "date-time"
+      }
+    },
+    "required": ["text", "url", "chunk_index", "page_title", "token_count", "created_at"]
+  },
+  "point_schema": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "Unique identifier for this point (UUID v4)",
+        "format": "uuid"
+      },
+      "vector": {
+        "type": "array",
+        "description": "1024-dimensional embedding vector from Cohere embed-english-v3.0",
+        "items": {
+          "type": "number",
+          "format": "float32"
+        },
+        "minItems": 1024,
+        "maxItems": 1024
+      },
+      "payload": {
+        "$ref": "#/payload_schema"
+      }
+    },
+    "required": ["id", "vector", "payload"]
+  },
+  "example_point": {
+    "id": "a7f3e9b1-4c2d-4e8a-9f1b-2d3c4e5f6a7b",
+    "vector": "[0.023, -0.145, 0.892, ..., 0.034]",
+    "payload": {
+      "text": "Humanoid robotics focuses on creating robots with human-like form and function. These robots typically have a head, torso, two arms, and two legs, mimicking the human body structure. The field combines mechanical engineering, electrical engineering, computer science, and artificial intelligence to create machines that can interact with human environments naturally.",
+      "url": "https://physical-ai-humanoid-robotics-blond-eta.vercel.app/docs/chapter1/intro",
+      "chunk_index": 0,
+      "page_title": "Introduction to Humanoid Robotics",
+      "token_count": 395,
+      "created_at": "2025-12-11T10:31:10Z"
+    }
+  },
+  "query_examples": {
+    "similarity_search": {
+      "description": "Find similar chunks to a query",
+      "query": {
+        "vector": "[0.012, -0.234, 0.567, ..., 0.089]",
+        "limit": 5,
+        "with_payload": true
+      }
+    },
+    "filtered_similarity_search": {
+      "description": "Find similar chunks from specific URL",
+      "query": {
+        "vector": "[0.012, -0.234, 0.567, ..., 0.089]",
+        "limit": 5,
+        "filter": {
+          "must": [
+            {
+              "key": "url",
+              "match": {
+                "value": "https://physical-ai-humanoid-robotics-blond-eta.vercel.app/docs/chapter1/intro"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "metadata_scroll": {
+      "description": "Retrieve all chunks with specific token count range",
+      "query": {
+        "filter": {
+          "must": [
+            {
+              "key": "token_count",
+              "range": {
+                "gte": 400,
+                "lte": 500
+              }
+            }
+          ]
+        },
+        "limit": 100
+      }
+    }
+  },
+  "index_recommendations": {
+    "payload_indexes": [
+      {
+        "field": "url",
+        "type": "keyword",
+        "rationale": "Frequent filtering by URL for idempotency checks and page-specific searches"
+      },
+      {
+        "field": "chunk_index",
+        "type": "integer",
+        "rationale": "Enable ordering and range queries on chunk position"
+      },
+      {
+        "field": "page_title",
+        "type": "text",
+        "rationale": "Support full-text search on titles"
+      },
+      {
+        "field": "token_count",
+        "type": "integer",
+        "rationale": "Filter by chunk size for retrieval tuning"
+      },
+      {
+        "field": "created_at",
+        "type": "datetime",
+        "rationale": "Time-based queries for incremental updates"
+      }
+    ],
+    "text_not_indexed": {
+      "rationale": "Text field is too large and only used for display, not filtering. Indexing would waste resources."
+    }
+  }
+}

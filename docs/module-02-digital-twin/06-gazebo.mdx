@@ -1,0 +1,193 @@
+---
+sidebar_position: 2
+title: Chapter 6 - Gazebo Simulation for Humanoid Robots
+description: Hands-on guide to Gazebo installation, world creation, robot spawning, and sensor integration with ROS 2
+keywords: [Gazebo, Gazebo Harmonic, SDF, URDF, gazebo_ros, sensor plugins, simulation]
+---
+
+# Chapter 6: Gazebo Simulation for Humanoid Robots
+
+:::info Template
+Fill in content from `specs/001-physical-ai-book-specs/spec.md` lines 608-693.
+Use Chapter 5 (`05-simulation-foundations.mdx`) as formatting reference.
+:::
+
+## Overview
+
+**TODO**: Add overview paragraph introducing Gazebo as the industry-standard ROS 2 simulator (spec.md lines 610-612)
+
+**Target Audience**: Developers ready to simulate ROS 2 robots in Gazebo.
+
+---
+
+## Learning Objectives
+
+By the end of this chapter, you will be able to:
+
+1. **TODO**: Add learning objective 1 from spec.md line 616
+2. **TODO**: Add learning objective 2 from spec.md line 617
+3. **TODO**: Add learning objective 3 from spec.md line 618
+4. **TODO**: Add learning objective 4 from spec.md line 619
+5. **TODO**: Add learning objective 5 from spec.md line 620
+6. **TODO**: Add learning objective 6 from spec.md line 621
+
+---
+
+## Gazebo Architecture: Server vs. Client
+
+**TODO**: Explain Gazebo architecture (spec.md lines 625-626)
+- Server: Physics simulation
+- Client: Visualization
+- How they communicate
+
+---
+
+## SDF vs. URDF: Choosing the Right Format
+
+**TODO**: Explain when to use SDF vs. URDF (spec.md line 626)
+- URDF: Robot descriptions (with Gazebo extensions)
+- SDF: World files and standalone models
+
+---
+
+## Installing Gazebo on Ubuntu 22.04
+
+**TODO**: Add installation instructions and verification steps (spec.md lines 640-663)
+
+```bash
+# TODO: Add commands from spec.md lines 642-663
+# - Install Gazebo Harmonic
+# - Launch Gazebo
+# - Spawn robot using gazebo_ros
+# - Launch with custom world
+# - List models
+# - Check version
+# - Launch ROS 2 + Gazebo integration
+```
+
+---
+
+## Creating Custom Simulation Worlds
+
+**TODO**: Add section on creating world files (spec.md lines 628, 635)
+- Ground plane
+- Lighting
+- Obstacles
+- Gravity and physics parameters
+
+**Example World File**:
+```xml
+<!-- TODO: Add example world file from spec.md line 635 -->
+```
+
+---
+
+## Spawning Humanoid Robots in Gazebo
+
+**TODO**: Explain spawning process (spec.md lines 629, 637)
+- Publishing URDF to `/robot_description`
+- Using `ros2 run gazebo_ros spawn_entity.py`
+
+**Example Launch File**:
+```python
+# TODO: Add launch file example from spec.md line 637
+```
+
+---
+
+## Gazebo Plugins for Sensors and Actuators
+
+**TODO**: Explain Gazebo plugins (spec.md lines 627, 630-631)
+
+### Camera Plugin
+
+**TODO**: Add camera plugin example (spec.md line 638)
+```xml
+<!-- TODO: Add camera plugin configuration -->
+```
+
+### LiDAR Plugin
+
+**TODO**: Add LiDAR plugin example
+
+### IMU Plugin
+
+**TODO**: Add IMU plugin example
+
+---
+
+## Integrating Gazebo with ROS 2
+
+**TODO**: Explain gazebo_ros_pkgs and ROS 2 bridge (spec.md line 631)
+
+**Mermaid Diagram TODO**: Create Gazebo + ROS 2 Architecture diagram (spec.md line 667)
+```
+TODO: Show Gazebo Server → Gazebo Plugins → ROS 2 Topics → RViz
+```
+
+---
+
+## Visualizing Sensor Data in RViz
+
+**TODO**: Add section on using RViz alongside Gazebo (spec.md line 620)
+- Launching RViz
+- Configuring displays for camera, LiDAR
+- Synchronizing TF frames
+
+---
+
+## Debugging Common Gazebo Issues
+
+**TODO**: Add troubleshooting section (spec.md line 621)
+- Model not spawning
+- Sensor data not publishing
+- Physics instability
+- Plugin errors
+
+---
+
+## Practice Tasks
+
+Complete these exercises to master Gazebo simulation:
+
+### **Task 1: Install Gazebo**
+**TODO**: Add task details from spec.md line 674
+
+---
+
+### **Task 2: Create Custom World**
+**TODO**: Add task details from spec.md line 675
+
+---
+
+### **Task 3: Spawn URDF Robot**
+**TODO**: Add task details from spec.md line 676
+
+---
+
+### **Task 4: Add Camera Plugin**
+**TODO**: Add task details from spec.md line 677
+
+---
+
+## Summary
+
+**TODO**: Add summary points from spec.md lines 680-686:
+- Gazebo as 3D simulator with physics and ROS 2 integration
+- SDF for worlds, URDF for robots
+- Gazebo plugins for sensors and communication
+- gazebo_ros_pkgs for ROS 2 integration
+- Spawning process
+- Sensor data flow through ROS 2 topics
+
+---
+
+## References
+
+- Gazebo Documentation. (2024). *Gazebo Docs*. Retrieved from https://gazebosim.org/docs
+- Open Robotics. (2024). *ROS 2 + Gazebo Integration*. Retrieved from https://docs.ros.org/en/humble/Tutorials/Advanced/Simulators/Gazebo/Gazebo.html
+- SDF Format Specification. (2024). Retrieved from http://sdformat.org/
+
+---
+
+**Next Chapter**: [Chapter 7: Unity for Humanoid Robot Visualization](07-unity.mdx) - Learn how to use Unity for photorealistic rendering and visualization.
