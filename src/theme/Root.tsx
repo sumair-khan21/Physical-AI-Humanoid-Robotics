@@ -2,12 +2,12 @@
  * Root Component - Wraps the entire Docusaurus app
  *
  * This component is automatically loaded by Docusaurus and wraps every page.
- * Perfect for adding global components like the ChatWidget.
+ * Perfect for adding global components like the Modern ChatWidget.
  */
 
 import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import ChatWidget from '../components/ChatWidget/ChatWidget';
+import ModernChatWidget from '../components/ChatWidget/ModernChatWidget';
 
 export default function Root({ children }) {
   const { siteConfig } = useDocusaurusContext();
@@ -16,10 +16,8 @@ export default function Root({ children }) {
   return (
     <>
       {children}
-      <ChatWidget
+      <ModernChatWidget
         backendURL={backendURL}
-        position="bottom-right"
-        initialCollapsed={true}
         timeout={30000}
       />
     </>
