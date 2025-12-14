@@ -10,7 +10,7 @@ import { useChat } from '../../hooks/useChat';
 import ChatMessage from './ChatMessage';
 import ChatInput from './ChatInput';
 import type { BackendConfig } from '../../types/chat';
-import './ChatWidget.module.css';
+import './ChatWidget.css';
 
 interface ChatWidgetProps {
   /** Override backend URL (optional) */
