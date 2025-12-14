@@ -25,7 +25,7 @@ const config = {
   organizationName: 'sumair-khan21', // Usually your GitHub org/user name.
   projectName: 'my-research-paper', // Usually your repo name.
   deploymentBranch: 'gh-pages',
-  trailingSlash: false,
+  trailingSlash: true,
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
