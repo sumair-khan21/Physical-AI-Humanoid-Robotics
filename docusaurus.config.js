@@ -39,8 +39,8 @@ const config = {
   },
 
   customFields: {
-    // Backend URL for ChatWidget (environment-specific)
-    backendURL: process.env.BACKEND_URL || 'http://localhost:8000',
+    // Backend URL for ChatWidget (HF Space deployment)
+    backendURL: process.env.BACKEND_URL || 'https://sums2121-rag-chatbot-backend.hf.space',
   },
 
   presets: [
