@@ -1,10 +1,11 @@
 /**
- * Modern ChatWidget Component - Bottom Input Bar Design
+ * Professional ChatWidget Component
  *
- * A sleek, modern chatbot interface with:
- * - Fixed input bar at bottom center
- * - Expandable chat panel above input
- * - Smooth animations and modern styling
+ * An elegant, minimal chatbot interface with:
+ * - Compact input bar at bottom
+ * - Professional icons (no emojis)
+ * - Smooth animations and transitions
+ * - Clean, modern design
  */
 
 import React, { useState, useRef, useEffect } from 'react';
@@ -56,6 +57,17 @@ export default function ModernChatWidget({
     }
   }, [isExpanded]);
 
+  // Handle Escape key to minimize
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isExpanded) {
+        setIsExpanded(false);
+      }
+    };
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [isExpanded]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const trimmed = inputValue.trim();
@@ -85,19 +97,25 @@ export default function ModernChatWidget({
         <div className="modern-chat-panel">
           <div className="modern-chat-header">
             <div className="chat-header-content">
-              <div className="chat-header-icon">🤖</div>
+              <svg className="chat-header-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                <circle cx="9" cy="10" r="1" fill="currentColor"/>
+                <circle cx="12" cy="10" r="1" fill="currentColor"/>
+                <circle cx="15" cy="10" r="1" fill="currentColor"/>
+              </svg>
               <div className="chat-header-text">
                 <h3>AI Assistant</h3>
-                <p>Ask me anything about the textbook</p>
+                <p>Powered by your textbook knowledge</p>
               </div>
             </div>
             <button
               className="chat-close-btn"
               onClick={() => setIsExpanded(false)}
               aria-label="Minimize chat"
+              title="Minimize (Esc)"
             >
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M3 10h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M19 12H5"/>
               </svg>
             </button>
           </div>
@@ -105,17 +123,36 @@ export default function ModernChatWidget({
           <div className="modern-chat-messages">
             {messages.length === 0 && (
               <div className="modern-welcome">
-                <div className="welcome-icon">👋</div>
-                <h4>Welcome!</h4>
-                <p>Ask me anything about ROS 2, robotics, simulations, or AI models.</p>
+                <svg className="welcome-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                  <line x1="9" y1="9" x2="9.01" y2="9"/>
+                  <line x1="15" y1="9" x2="15.01" y2="9"/>
+                </svg>
+                <h4>Welcome to AI Assistant</h4>
+                <p>Get instant answers from your Physical AI & Robotics textbook</p>
                 <div className="quick-questions">
                   <button onClick={() => { setInputValue('What is ROS 2?'); inputRef.current?.focus(); }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="12" cy="12" r="10"/>
+                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                      <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
                     What is ROS 2?
                   </button>
-                  <button onClick={() => { setInputValue('Explain digital twins'); inputRef.current?.focus(); }}>
-                    Explain digital twins
+                  <button onClick={() => { setInputValue('Explain digital twin in robotics'); inputRef.current?.focus(); }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <rect x="2" y="7" width="20" height="14" rx="2"/>
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    </svg>
+                    Digital Twin Concepts
                   </button>
                   <button onClick={() => { setInputValue('What is NVIDIA Isaac Sim?'); inputRef.current?.focus(); }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                      <polyline points="2 17 12 22 22 17"/>
+                      <polyline points="2 12 12 17 22 12"/>
+                    </svg>
                     NVIDIA Isaac Sim
                   </button>
                 </div>
@@ -132,7 +169,11 @@ export default function ModernChatWidget({
 
             {error && (
               <div className="modern-error">
-                <div className="error-icon">⚠️</div>
+                <svg className="error-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="8" x2="12" y2="12"/>
+                  <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
                 <div className="error-content">
                   <p>{error.message}</p>
                   {error.retryable && (
@@ -153,13 +194,18 @@ export default function ModernChatWidget({
       <div className="modern-chat-input-bar">
         <div className="input-bar-container">
           <form onSubmit={handleSubmit} className="input-bar-form">
+            <button
+              type="button"
+              className="chat-trigger-btn"
+              onClick={() => setIsExpanded(!isExpanded)}
+              aria-label={isExpanded ? "Minimize chat" : "Expand chat"}
+              title={isExpanded ? "Minimize" : "Open AI Assistant"}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </button>
             <div className="input-wrapper">
-              <div className="input-icon">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/>
-                  <path d="M8 7h4M8 10h4M8 13h2"/>
-                </svg>
-              </div>
               <input
                 ref={inputRef}
                 type="text"
@@ -169,6 +215,7 @@ export default function ModernChatWidget({
                 placeholder="Ask a question..."
                 className="modern-input"
                 disabled={isLoading}
+                maxLength={500}
               />
               {isLoading && (
                 <div className="input-loading">
@@ -181,17 +228,14 @@ export default function ModernChatWidget({
               className="modern-send-btn"
               disabled={!inputValue.trim() || isLoading}
               aria-label="Send message"
+              title="Send (Enter)"
             >
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M2 10l16-8-8 16-2-8-6-0z" />
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"/>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
               </svg>
             </button>
           </form>
-          {isExpanded && (
-            <p className="input-hint">
-              Press <kbd>Enter</kbd> to send • <kbd>Esc</kbd> to minimize
-            </p>
-          )}
         </div>
       </div>
     </>
