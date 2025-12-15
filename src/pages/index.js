@@ -213,42 +213,43 @@ function HomepageHeader() {
     const { siteConfig } = useDocusaurusContext();
     return (
         <header className={styles.heroBanner}>
+            {/* Animated circuit lines background */}
+            <div className={styles.circuitLines}></div>
+
             <div className="container">
                 <div className={styles.heroGrid}>
+                    {/* Left Content */}
                     <div className={styles.heroContent}>
-                        <div className={styles.badgeContainer}>
-                            <span className={styles.badge}>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
-                                </svg>
-                                Open Source
-                            </span>
-                            <span className={styles.badge}>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <rect x="3" y="11" width="18" height="10" rx="2"/>
-                                    <circle cx="12" cy="5" r="2"/>
-                                    <path d="M12 7v4"/>
-                                    <line x1="8" y1="16" x2="8" y2="16"/>
-                                    <line x1="16" y1="16" x2="16" y2="16"/>
-                                </svg>
-                                Co-Learning with AI
-                            </span>
-                            <span className={styles.badge}>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                                </svg>
-                                Spec-Driven
-                            </span>
+                        <div className={styles.heroLabel}>
+                            <span className={styles.labelDot}></span>
+                            NEXT GENERATION ROBOTICS
                         </div>
+
                         <Heading as="h1" className={styles.heroTitle}>
-                            Physical AI & <br />
-                            <span className={styles.heroTitleGradient}>Humanoid Robotics</span>
+                            <span className={styles.titleMain}>TRONIX-5</span>
+                            <span className={styles.titleSub}>Physical AI System</span>
                         </Heading>
-                        <p className={styles.heroSubtitle}>
-                            A comprehensive guide to building autonomous agents with ROS 2,
-                            NVIDIA Isaac Sim, and Foundation Models.
+
+                        <p className={styles.heroDescription}>
+                            SYNAPRIX-9 is an advanced AI-powered robot engineered for precision, adaptability, and seamless integration into daily life and industrial workflows.
                         </p>
-                        <div className={styles.buttons}>
+
+                        <div className={styles.heroStats}>
+                            <div className={styles.statItem}>
+                                <div className={styles.statValue}>99.9%</div>
+                                <div className={styles.statLabel}>Accuracy</div>
+                            </div>
+                            <div className={styles.statItem}>
+                                <div className={styles.statValue}>24/7</div>
+                                <div className={styles.statLabel}>Operation</div>
+                            </div>
+                            <div className={styles.statItem}>
+                                <div className={styles.statValue}>AI</div>
+                                <div className={styles.statLabel}>Powered</div>
+                            </div>
+                        </div>
+
+                        <div className={styles.heroActions}>
                             <Link
                                 className="button button--primary button--lg"
                                 to="/docs/intro">
@@ -265,13 +266,50 @@ function HomepageHeader() {
                             </Link>
                         </div>
                     </div>
-                    <div className={styles.heroImageContainer}>
-                        <img
-                            src="img/hero_asset.png"
-                            alt="Physical AI Dashboard"
-                            className={styles.heroImage}
-                        />
-                        <div className={styles.heroGlow}></div>
+
+                    {/* Right Visual */}
+                    <div className={styles.heroVisual}>
+                        {/* Main robot image */}
+                        <div className={styles.robotContainer}>
+                            <div className={styles.robotGlow}></div>
+                            <img
+                                src="img/hero_asset.png"
+                                alt="TRONIX-5 Robot"
+                                className={styles.robotImage}
+                            />
+
+                            {/* Floating info card */}
+                            <div className={styles.floatingCard}>
+                                <div className={styles.cardHeader}>
+                                    <div className={styles.cardIcon}>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+                                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                                        </svg>
+                                    </div>
+                                    <span className={styles.cardTitle}>NOVA-7</span>
+                                </div>
+                                <p className={styles.cardDesc}>
+                                    NOVA-7 is a next-generation autonomous AI robot designed for complex industrial and research applications.
+                                </p>
+                                <div className={styles.cardLink}>
+                                    Learn More
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M5 12h14m-7-7l7 7-7 7"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            {/* Tech badges */}
+                            <div className={styles.techBadges}>
+                                <div className={styles.techBadge}>ROS 2</div>
+                                <div className={styles.techBadge}>Isaac Sim</div>
+                                <div className={styles.techBadge}>PyTorch</div>
+                            </div>
+                        </div>
+
+                        {/* Scanning lines effect */}
+                        <div className={styles.scanLines}></div>
                     </div>
                 </div>
             </div>
