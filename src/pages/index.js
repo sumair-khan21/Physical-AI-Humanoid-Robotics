@@ -13,8 +13,8 @@ const SpectrumList = [
         subtitle: 'Explicit Control',
         icon: (
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="3"/>
-                <path d="M12 1v6m0 6v6m5.2-13.2l-4.2 4.2m0 6l4.2 4.2M23 12h-6m-6 0H1m18.8 5.2l-4.2-4.2m0-6l4.2-4.2"/>
+                <circle cx="12" cy="12" r="3" />
+                <path d="M12 1v6m0 6v6m5.2-13.2l-4.2 4.2m0 6l4.2 4.2M23 12h-6m-6 0H1m18.8 5.2l-4.2-4.2m0-6l4.2-4.2" />
             </svg>
         ),
         description: (
@@ -36,10 +36,10 @@ const SpectrumList = [
         subtitle: 'Learned Behaviors',
         icon: (
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-                <line x1="12" y1="19" x2="12" y2="22"/>
-                <line x1="8" y1="22" x2="16" y2="22"/>
+                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                <line x1="12" y1="19" x2="12" y2="22" />
+                <line x1="8" y1="22" x2="16" y2="22" />
             </svg>
         ),
         description: (
@@ -61,8 +61,8 @@ const SpectrumList = [
         subtitle: 'Foundation Models',
         icon: (
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
-                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" />
+                <circle cx="12" cy="12" r="3" />
             </svg>
         ),
         description: (
@@ -111,8 +111,8 @@ const TechList = [
         desc: 'Photorealistic, physics-accurate simulation environment for synthetic data.',
         icon: (
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/>
-                <polyline points="17 2 12 7 7 2"/>
+                <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
+                <polyline points="17 2 12 7 7 2" />
             </svg>
         )
     },
@@ -121,9 +121,9 @@ const TechList = [
         desc: 'Industrial grade middleware for low-latency robot control.',
         icon: (
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <circle cx="12" cy="12" r="6"/>
-                <circle cx="12" cy="12" r="2"/>
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
             </svg>
         )
     },
@@ -132,7 +132,7 @@ const TechList = [
         desc: 'The leading deep learning research framework for training policies.',
         icon: (
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
             </svg>
         )
     },
@@ -141,7 +141,7 @@ const TechList = [
         desc: 'Containerization ensures your agents run identically everywhere.',
         icon: (
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M2 13h6v6H2zm8 0h6v6h-6zm8 0h6v6h-6zM2 5h6v6H2zm8 0h6v6h-6zm8 0h6v6h-6z"/>
+                <path d="M2 13h6v6H2zm8 0h6v6h-6zm8 0h6v6h-6zM2 5h6v6H2zm8 0h6v6h-6zm8 0h6v6h-6z" />
             </svg>
         )
     }
@@ -165,7 +165,7 @@ function SpectrumCard({ title, subtitle, icon, description, features, example, i
                         {features.map((feature, idx) => (
                             <li key={idx} className={styles.featureItem}>
                                 <svg className={styles.checkIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                    <polyline points="20 6 9 17 4 12"/>
+                                    <polyline points="20 6 9 17 4 12" />
                                 </svg>
                                 {feature}
                             </li>
@@ -220,34 +220,15 @@ function HomepageHeader() {
                 <div className={styles.heroGrid}>
                     {/* Left Content */}
                     <div className={styles.heroContent}>
-                        <div className={styles.heroLabel}>
-                            <span className={styles.labelDot}></span>
-                            NEXT GENERATION ROBOTICS
-                        </div>
-
                         <Heading as="h1" className={styles.heroTitle}>
-                            <span className={styles.titleMain}>TRONIX-5</span>
-                            <span className={styles.titleSub}>Physical AI System</span>
+                            <span className={styles.titleMain}>Physical AI &</span>
+                            <span className={styles.titleSub}>Humanoid Robotics</span>
                         </Heading>
 
                         <p className={styles.heroDescription}>
-                            SYNAPRIX-9 is an advanced AI-powered robot engineered for precision, adaptability, and seamless integration into daily life and industrial workflows.
+                            A comprehensive guide to building autonomous agents with ROS 2,
+                            NVIDIA Isaac Sim, and Foundation Models.
                         </p>
-
-                        <div className={styles.heroStats}>
-                            <div className={styles.statItem}>
-                                <div className={styles.statValue}>99.9%</div>
-                                <div className={styles.statLabel}>Accuracy</div>
-                            </div>
-                            <div className={styles.statItem}>
-                                <div className={styles.statValue}>24/7</div>
-                                <div className={styles.statLabel}>Operation</div>
-                            </div>
-                            <div className={styles.statItem}>
-                                <div className={styles.statValue}>AI</div>
-                                <div className={styles.statLabel}>Powered</div>
-                            </div>
-                        </div>
 
                         <div className={styles.heroActions}>
                             <Link
@@ -260,7 +241,7 @@ function HomepageHeader() {
                                 to="https://github.com/sumair-khan21/Physical-AI-Humanoid-Robotics"
                                 style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
                                 </svg>
                                 Explore Code
                             </Link>
@@ -274,7 +255,7 @@ function HomepageHeader() {
                             <div className={styles.robotGlow}></div>
                             <img
                                 src="img/hero_asset.png"
-                                alt="TRONIX-5 Robot"
+                                alt="Physical AI Dashboard"
                                 className={styles.robotImage}
                             />
 
@@ -283,8 +264,8 @@ function HomepageHeader() {
                                 <div className={styles.cardHeader}>
                                     <div className={styles.cardIcon}>
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
-                                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                                            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+                                            <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
                                         </svg>
                                     </div>
                                     <span className={styles.cardTitle}>NOVA-7</span>
@@ -295,7 +276,7 @@ function HomepageHeader() {
                                 <div className={styles.cardLink}>
                                     Learn More
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                        <path d="M5 12h14m-7-7l7 7-7 7"/>
+                                        <path d="M5 12h14m-7-7l7 7-7 7" />
                                     </svg>
                                 </div>
                             </div>
